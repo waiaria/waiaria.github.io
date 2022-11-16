@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="../common.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ⅷ장 센스리더의 기능과 기능키 - 포인터 이동 기능</title>
+</head>
+<body>
+
+<div>
+<div class="chplist">
+<br/>
+<h3 class="ht">Ⅷ-2 포인터 이동 기능</h3>
+<br/>
+<ul>
+<li><a name="chapter1_menu" href="#chapter1">Ⅷ-2-1. 윈도우 외각으로 이동</a></li>
+<li><a name="chapter2_menu" href="#chapter2">Ⅷ-2-2. 픽셀 단위 이동</a></li>
+<li><a name="chapter3_menu" href="#chapter3">Ⅷ-2-3. 특정 픽셀로 이동 &lt;Alt-Shift-Numpad5&gt;</a></li>
+<li><a name="chapter4_menu" href="#chapter4">Ⅷ-2-4. 포커스 이동</a></li>
+</ul>
+</div>
+<br/>
+<div>
+<h3><a name="chapter1" href="#chapter1_menu">Ⅷ-2-1. 윈도우 외각으로 이동</a></h3>
+<br/>
+<p> 좌상단으로 이동 &lt;Alt-Numpad7&gt; &lt;Insert-Numpad7&gt;<br/>
+우상단으로 이동 &lt;Alt-Numpad9&gt; &lt;Insert-Numpad9&gt;<br/>
+좌하단으로 이동 &lt;Alt-Numpad1&gt; &lt;Insert-Numpad1&gt;<br/>
+우하단으로 이동 &lt;Alt-Numpad3&gt; &lt;Insert-Numpad3&gt;</p>
+<h4>1. 좌상단으로 이동 &lt;Alt-Numpad7&gt; &lt;Insert-Numpad7&gt;<br/>
+</h4>
+<p> 현재 지정된 윈도우 범위의 좌상단으로 읽기포인터를 이동하고 x, y 좌표값을 읽습니다.</p>
+<p> 좌표값은 화면 좌표(절대 좌표)입니다.</p>
+<h4>2. 우상단으로 이동 &lt;Alt-Numpad9&gt; &lt;Insert-Numpad9&gt;<br/>
+</h4>
+<p> 현재 지정된 윈도우 범위의 우상단으로 읽기 포인터를 이동하고 화면 좌표값을 알려줍니다.</p>
+<h4>3. 좌하단으로 이동 &lt;Alt-Numpad1&gt; &lt;Insert-Numpad1&gt;<br/>
+</h4>
+<p> 현재 지정된 윈도우 범위의 좌하단으로 읽기포인터를 이동하고 x, y 좌표 값을 읽습니다.</p>
+<p> 좌표값은 화면 좌표(절대 좌표)입니다.</p>
+<h4>4. 우하단으로 이동 &lt;Alt-Numpad3&gt; &lt;Insert-Numpad3&gt;<br/>
+</h4>
+<p> 현재 지정된 윈도우 범위의 우하단으로 읽기 포인터를 이동하고 x, y 좌표값을 읽습니다.</p>
+<p> 좌표값은 화면 좌표(절대 좌표)입니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter2" href="#chapter2_menu">Ⅷ-2-2. 픽셀 단위 이동</a></h3>
+<br/>
+<p> 현재 읽기 포인터의 위치에서 이동 픽셀 설정값만큼 읽기 포인터를 이동시키고 x, y 좌표를 알려줍니다. 픽셀 이동시 글자를 만나면 좌표와 함께 글자도 읽어주고, 읽기 포인터는 현재 지정된 윈도우 범위를 벗어날 수 없습니다. (비프음 출력)</p>
+<p> 좌표값은 화면 좌표(절대 좌표)를 기준으로 합니다.</p>
+<h4>1. 픽셀 단위 위로 이동 &lt;Alt-Shift-Numpad8&gt;</h4>
+<h4>2. 픽셀 단위 왼쪽으로 이동 &lt;Alt-Shift-Numpad4&gt;<br/>
+</h4>
+<h4>3. 픽셀 단위 오른쪽으로 이동 &lt;Alt-Shift-Numpad6&gt;<br/>
+</h4>
+<h4>4. 픽셀 단위 아래로 이동 &lt;Alt-Shift-Numpad2&gt;<br/>
+</h4>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter3" href="#chapter3_menu">Ⅷ-2-3. 특정 픽셀로 이동 &lt;Alt-Shift-Numpad5&gt;</a></h3>
+<br/>
+<p> 현재 읽기 포인터의 위치를 사용자가 입력한 좌표로 이동합니다. 입력 가능한 좌표는 화면 좌표와 윈도우 좌표 모두 사용할 수 있습니다.</p>
+<p> 특정 픽셀 이동 방법</p>
+<p> ① &lt;Alt-Shift-Numpad5&gt;키를 눌러 &lt;좌표 입력&gt; 대화상자를 엽니다.</p>
+<p align="center"><img border="0" src="../img/pixelmove.jpg" width="290" height="218" alt="좌표입력대화상자"/></p>
+<p> ② 윈도우 좌표를 사용하고자 한다면 &lt;Shift-Tab&gt;키를 눌러 &#39;좌표 종류&#39; 라디오 버튼으로 이동한 뒤 윈도우 좌표에 포커스합니다. 좌표 종류의 기본값은 화면 좌표입니다.<br/>
+<p> 화면 좌표 : 전체 화면의 좌상단을 0,0으로 하는 좌표<br/>
+윈도우 좌표 : 현재 활성 윈도우의 좌상단을 0,0으로 하는 좌표</p>
+<br/>
+③ &lt;Tab&gt;키를 눌러 X 좌표값을 입력합니다.<br/>
+④ &lt;Tab&gt;키를 눌러 Y 좌표를 입력합니다.<br/>
+⑤ &lt;확인&gt; 버튼을 누릅니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter4" href="#chapter4_menu">Ⅷ-2-4. 포커스 이동</a></h3>
+<br/>
+<p> 포커스로 이동 &lt;Numpad+(플러스)&gt;<br/>
+포인터를 캐럿으로 이동 &lt;Ctrl-Numpad+(플러스)&gt; &lt;Insert-Numpad+(플러스)&gt;<br/>
+뷰 포인터를 마우스 포인터로 이동 &lt;Alt-Shift-Numpad+(플러스)&gt;<br/>
+마우스 포인터를 뷰 포인터로 이동 &lt;Ctrl-Shift-Numpad+(플러스)&gt;</p>
+<h4>1. 포커스로 이동 &lt;Numpad+(플러스)&gt;</h4>
+<p> 현재 포커스된 객체로 읽기 포인터를 이동시키고 포커스된 객체를 읽어줍니다.</p>
+<h4>2. 포인터를 캐럿으로 이동 &lt;Ctrl-Numpad+(플러스)&gt; &lt;Insert-Numpad+(플러스)&gt;</h4>
+<p> 읽기 포인터를 캐럿이 위치한 곳으로 이동시키고 현재 캐럿이 있는 줄의 내용을 읽습니다.<br/>
+캐럿이 없는 경우에는 비프음과 함께 &quot;캐럿이 없습니다&quot;라고 음성출력합니다.</p>
+<h4>3. 뷰 포인터를 마우스 포인터로 이동 &lt;Alt-Shift-Numpad+(플러스)&gt;<br/>
+</h4>
+<p> 현재 읽기 포인터를 실제 마우스 포인터가 위치한 곳으로 이동합니다.</p>
+<h4>4. 마우스 포인터를 뷰 포인터로 이동 &lt;Ctrl-Shift-Numpad+(플러스)&gt;<br/>
+</h4>
+<p> 실제 마우스 포인터를 현재 읽기 포인터가 위치한 곳으로 이동시킵니다.
+</div>
+</div>
+
+<footer>
+<ul>
+<li><a accesskey="h" href="../helpindex.html">홈으로...</a></li>
+<li><a accesskey="b" href="../chapter8/chapter8-1.html">이전: Ⅷ장 센스리더의 기능과 기능키 - 포인터 읽기 기능</a></li>
+<li><a accesskey="n" href="../chapter8/chapter8-3.html">다음: Ⅷ장 센스리더의 기능과 기능키 - 마우스 동작 기능</a></li>
+</ul>
+</footer>
+</body>
+</html>

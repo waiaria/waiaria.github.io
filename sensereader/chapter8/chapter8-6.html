@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="../common.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ⅷ장 센스리더의 기능과 기능키 - 활성 윈도우 정보 기능</title>
+</head>
+<body>
+
+<div>
+<div class="chplist">
+<br/>
+<h3 class="ht">Ⅷ-6 활성 윈도우 정보 기능</h3>
+<br/>
+<ul>
+<li><a name="chapter1_menu" href="#chapter1">Ⅷ-6-1. 윈도우 상태 알림 &lt;Insert-W&gt;</a></li>
+<li><a name="chapter2_menu" href="#chapter2">Ⅷ-6-2. 제목줄 읽기 &lt;Ctrl-Shift-T&gt;</a></li>
+<li><a name="chapter3_menu" href="#chapter3">Ⅷ-6-3. 메뉴줄 읽기 &lt;Insert-M&gt;</a></li>
+<li><a name="chapter4_menu" href="#chapter4">Ⅷ-6-4. 상태줄 읽기 &lt;Ctrl-Shift-S&gt;</a></li>
+<li><a name="chapter5_menu" href="#chapter5">Ⅷ-6-5. 디폴트 버튼 읽기 &lt;Ctrl-Shift-D&gt;</a></li>
+<li><a name="chapter6_menu" href="#chapter6">Ⅷ-6-6. 스크롤바 읽기 &lt;Alt-Shift-S&gt;</a></li>
+<li><a name="chapter7_menu" href="#chapter7">Ⅷ-6-7. 프로그레스바 읽기 &lt;Ctrl-Shift-P&gt;</a></li>
+<li><a name="chapter8_menu" href="#chapter8">Ⅷ-6-8. 포커스 객체 읽기&lt;Ctrl-Shift-F&gt;</a></li>
+<li><a name="chapter9_menu" href="#chapter9">Ⅷ-6-9. 윈도우 내용 읽기 &lt;Ctrl-Shift-W&gt;</a></li>
+<li><a name="chapter10_menu" href="#chapter10">Ⅷ-6-10. 선택 영역 읽기 &lt;Ctrl-Shift-B&gt;</a></li>
+<li><a name="chapter11_menu" href="#chapter11">Ⅷ-6-11. 포커스 윈도우 읽기 &lt;Alt-Shift-F&gt;</a></li>
+<li><a name="chapter12_menu" href="#chapter12">Ⅷ-6-12. 범위 전체 읽기 &lt;Alt-Shift-G&gt;</a></li>
+</ul>
+</div>
+<br/>
+<div>
+<h3><a name="chapter1" href="#chapter1_menu">Ⅷ-6-1. 윈도우 상태 알림 &lt;Insert-W&gt;</a></h3>
+<br/>
+<p> 현재 활성된 윈도우의 상태를 알려줍니다.</p>
+<p> 윈도우의 상태는 최대화, 기본창, 최소화의 3가지이지만 최소화 상태는 알려주지 않습니다.</p>
+<p> 활성 윈도우가 최대화 되어 있으면 &#39;최대창&#39;라고 읽어줍니다.</p>
+<p> 기본창의 경우 &#39;기본창 좌상단 x, y 우하단 x, y&#39; 형태로 음성출력을 합니다.</p>
+<p> 예 : &#39;기본창 좌상단: 68, 50 우하단: 500, 300&#39;</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter2" href="#chapter2_menu">Ⅷ-6-2. 제목줄 읽기 &lt;Ctrl-Shift-T&gt;</a></h3>
+<br/>
+<p> 현재 활성화된 윈도우의 제목줄을 읽어줍니다.</p>
+<p> 활성화된 윈도우가 없으면 &quot;활성화된 윈도우가 없습니다&quot;라고 음성출력합니다. 활성화된 윈도우가 없는 경우는 어떤 프로그램을 사용 종료했을 경우 실질적으로 하나의 윈도우가 활성화는 되었지만 최소화된 <br/>
+경우입니다.</p>
+<p> 활성 윈도우에서 제목줄이 없는 경우는 &quot;제목줄이 없습니다&quot;라고 음성 메세지를 출력합니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter3" href="#chapter3_menu">Ⅷ-6-3. 메뉴줄 읽기 &lt;Insert-M&gt;</a></h3>
+<br/>
+<p> 현재 활성화된 윈도우의 메뉴줄을 읽습니다.</p>
+<p> 메뉴가 없는 경우에는 비프음과 함께 &quot;메뉴가 없습니다&quot;라고 음성출력을 합니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter4" href="#chapter4_menu">Ⅷ-6-4. 상태줄 읽기 &lt;Ctrl-Shift-S&gt;</a></h3>
+<br/>
+<p> 현재 활성화된 윈도우의 상태줄을 읽습니다.</p>
+<p> 상태줄이 없는 경우에는 비프음과 함께 &quot;상태줄이 없습니다&quot;라고 음성출력합니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter5" href="#chapter5_menu">Ⅷ-6-5. 디폴트 버튼 읽기 &lt;Ctrl-Shift-D&gt;</a></h3>
+<br/>
+<p> 대화상자에서 디폴트로 지정된 버튼을 읽어줍니다. 디폴트 버튼은 일반적으로 엔터키를 눌렀을 때 적용되는 버튼입니다.</p>
+<p> 대화상자가 아니거나 디폴트 버튼이 없으면 비프음과 함께 &quot;디폴트 버튼이 없습니다&quot;라고 음성 메세지를 출력합니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter6" href="#chapter6_menu">Ⅷ-6-6. 스크롤바 읽기 &lt;Alt-Shift-S&gt;</a></h3>
+<br/>
+<p> 현재 활성화된 윈도우에 스크롤바 상태를 읽어줍니다.</p>
+<p> 수직, 수평 스크롤바가 모두 있는 경우 &#39;수직 스크롤: 현재위치/총 크기 수평 스크롤: 현재위치/총크기&#39; 형식으로 읽어줍니다.</p>
+<p> 수평 스크롤만 있는 경우는 &#39;수평 스크롤: 현재위치/총크기&#39; 형태로 음성출력합니다.</p>
+<p> 스크롤바가 발견되지 않으면 비프음과 함께 &quot;스크롤바가 없습니다&quot;라고 음성 메세지를 출력합니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter7" href="#chapter7_menu">Ⅷ-6-7. 프로그레스바 읽기 &lt;Ctrl-Shift-P&gt;</a></h3>
+<br/>
+<p> 현재 활성화된 윈도우의 프로그레스바를 읽습니다.</p>
+<p> 프로그레스바는 인터넷에서 새 페이지가 열릴 때나 프로그램의 인스톨, 파일을 다운로드 등의 작업에서 진행상황을 표시해 주는 컨트롤입니다.</p>
+<p> 프로그레스바가 존재하는 경우 진행상태를 %단위로 알려주며, 프로그레스바가 발견되지 않으면 비프음과 함께 &quot;프로그레스바가 없습니다&quot;라고 음성 <br/>
+메세지를 출력합니다.</p>
+<p> 화면에 진행상태를 표시하는 방법은 프로그레스바를 이용해서 나타내는 방법과 글자로 직접 %단위의 기록을 하는 경우가 있습니다. 글자로 표시된 <br/>
+경우에는 읽기포인터를 사용하면 진행상태를 확인할 수 있습니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter8" href="#chapter8_menu">Ⅷ-6-8. 포커스 객체 읽기&lt;Ctrl-Shift-F&gt;</a></h3>
+<br/>
+<p> 현재 포커스된 객체를 다시 읽습니다.</p>
+<p> 캐럿이 없는 경우에는, &#39;캐럿 현재 줄 읽기&#39; 기능과 동일하게 동작합니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter9" href="#chapter9_menu">Ⅷ-6-9. 윈도우 내용 읽기 &lt;Ctrl-Shift-W&gt;</a></h3>
+<br/>
+<p> 현재 활성화된 윈도우의 모든 내용을 읽습니다.</p>
+<p> 이 기능은 센스리더 윈도우 범위의 적용을 받지 <br/>
+않습니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter10" href="#chapter10_menu">Ⅷ-6-10. 선택 영역 읽기 &lt;Ctrl-Shift-B&gt;</a></h3>
+<br/>
+<p> 편집창과 가상커서 등에서 블럭으로 지정된 내용을 읽어줍니다.</p>
+<p> 편집창의 경우 전체 선택된 글자의 수와 내용을 읽어줍니다. 만약 선택된 영역이 한 페이지 이상이면 끝으로부터 한 화면 분량만 읽어줍니다.</p>
+<p> 가상커서에서는 블럭으로 지정된 글자수와 내용을 읽어주고, 목록상자에서는 전체 목록의 수와 선택된 목록의 수를 음성으로 출력합니다.</p>
+<p> 선택된 영역이 없다면 &quot;선택된 영역이 없습니다&quot;라고 음성 메세지를 출력합니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter11" href="#chapter11_menu">Ⅷ-6-11. 포커스 윈도우 읽기 &lt;Alt-Shift-F&gt;</a></h3>
+<br/>
+<p> 현재 활성된 포커스 윈도우의 내용을 읽습니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter12" href="#chapter12_menu">Ⅷ-6-12. 범위 전체 읽기 &lt;Alt-Shift-G&gt;</a></h3>
+<br/>
+<p> 현재 선택된 윈도우 범위의 전체 내용을 읽습니다.</p>
+<p> 여기서 말하는 &#39;범위&#39;란 센스리더에서 지정한 윈도우 범위를 의미하며, 이 기능은 &#39;윈도우 내용 읽기&#39; 기능과는 구별됩니다.</p>
+
+</div>
+</div>
+
+<footer>
+<ul>
+<li><a accesskey="h" href="../helpindex.html">홈으로...</a></li>
+<li><a accesskey="b" href="../chapter8/chapter8-5.html">이전: Ⅷ장 센스리더의 기능과 기능키 - 객체 탐색 기능</a></li>
+<li><a accesskey="n" href="../chapter8/chapter8-7.html">다음: Ⅷ장 센스리더의 기능과 기능키 - 사용자 윈도우 기능</a></li>
+</ul>
+</footer>
+</body>
+</html>

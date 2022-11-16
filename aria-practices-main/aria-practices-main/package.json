@@ -1,0 +1,85 @@
+{
+  "name": "aria-practices",
+  "version": "0.0.0",
+  "description": "This repository maintains the WAI-ARIA Authoring Practices Guide. This is developed by the [ARIA Working Group](http://www.w3.org/WAI/ARIA/). The staff contact is [Michael Cooper](http://www.w3.org/People/cooper/). Please do not provide commit access to this repository without coordination.",
+  "main": "index.js",
+  "private": true,
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "fix": "npm run lint:es -- --fix && npm run lint:css -- --fix",
+    "htmlhint": "htmlhint \"**/*.html\" \"**/*.template\" --ignore \"common/**/*.html\" --format unix",
+    "lint": "npm run lint:es && npm run lint:css && npm run lint:html && npm run lint:spelling",
+    "lint:css": "stylelint **/*.css",
+    "lint:es": "eslint . --report-unused-disable-directives",
+    "lint:js": "npm run lint:es",
+    "lint:html": "npm run htmlhint && npm run vnu-jar",
+    "lint:spelling": "cspell \"**/*.*\"",
+    "reference-tables": "node scripts/reference-tables.js",
+    "regression": "ava --timeout=1m",
+    "regression-report": "node test/util/report",
+    "test": "npm run lint && npm run regression",
+    "vnu-jar": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --filterfile .vnurc --no-langdetect --skip-non-html aria-practices.html index.html examples/",
+    "create-gh-project": "node ./scripts/create-gh-project.js",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w3c/aria-practices.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/w3c/aria-practices/issues"
+  },
+  "homepage": "https://github.com/w3c/aria-practices#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/eslint-parser": "^7.18.2",
+    "ava": "^4.3.0",
+    "cheerio": "^1.0.0-rc.10",
+    "cspell": "^6.2.2",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-ava": "^13.2.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "geckodriver": "^3.0.1",
+    "glob": "^8.0.3",
+    "htmlhint": "^1.1.4",
+    "htmlparser2": "^8.0.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "selenium-webdriver": "^4.3.0",
+    "stylelint": "^14.5.3",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "vnu-jar": "^21.2.5"
+  },
+  "lint-staged": {
+    "*.css": [
+      "stylelint --fix"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ],
+    "examples/**/*.html": [
+      "npm run reference-tables",
+      "git add examples/index.html"
+    ]
+  },
+  "ava": {
+    "files": [
+      "test/tests/*"
+    ]
+  },
+  "dependencies": {
+    "@octokit/rest": "^18.12.0",
+    "dotenv": "^16.0.1",
+    "node-html-parser": "^5.2.0"
+  }
+}

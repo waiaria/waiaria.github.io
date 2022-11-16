@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="../common.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ⅷ장 센스리더의 기능과 기능키 - 위치 정보 관련 기능</title>
+</head>
+<body>
+
+<div>
+<div class="chplist">
+<br/>
+<h3 class="ht">Ⅷ-19. 위치 정보 관련 기능</h3>
+<br/>
+<ul>
+<li><a name="chapter1_menu" href="#chapter1">Ⅷ-19-1. 좌표 알림 &lt;Insert-C&gt;</a></li>
+<li><a name="chapter2_menu" href="#chapter2">Ⅷ-19-2. 글자 코드 알림 &lt;없음&gt;</a></li>
+<li><a name="chapter3_menu" href="#chapter3">Ⅷ-19-3. 글자 속성 알림 &lt;Insert-A&gt;</a></li>
+<li><a name="chapter4_menu" href="#chapter4">Ⅷ-19-4. 캐럿 좌표 알림 &lt;Ctrl-Insert-C&gt;</a></li>
+<li><a name="chapter5_menu" href="#chapter5">Ⅷ-19-5. 캐럿 위치 글자 코드 알림 &lt;없음&gt;</a></li>
+<li><a name="chapter6_menu" href="#chapter6">Ⅷ-19-6. 캐럿 위치 글자 속성 알림 &lt;Ctrl-Insert-A&gt;</a></li>
+</ul>
+</div>
+<br/>
+<div>
+<h3><a name="chapter1" href="#chapter1_menu">Ⅷ-19-1. 좌표 알림 &lt;Insert-C&gt;</a></h3>
+<br/>
+<p> 현재 읽기 포인터가 위치한 좌표를 &#39;화면좌표 x, y 윈도우좌표 x, y&#39; 형식으로 <br/>
+읽어줍니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter2" href="#chapter2_menu">Ⅷ-19-2. 글자 코드 알림 &lt;없음&gt;</a></h3>
+<br/>
+<p> 현재 읽기포인터가 위치한 글자의 코드를 WideCharacter(유니코드) 값으로 알려줍니다.</p>
+<p> 글자가 없으면 비프음을 냅니다.</p>
+<p> 예: &#39;A&#39; &#39;65&#39;</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter3" href="#chapter3_menu">Ⅷ-19-3. 글자 속성 알림 &lt;Insert-A&gt;</a></h3>
+<br/>
+<p> 현재 읽기포인터가 위치한 글자의 속성을 알려줍니다.</p>
+<p> 글자 속성 알림 기능을 한 번 누르면 폰트명, 글자 포인트, 속성(언더라인, 기울임, 진하게) 등의 속성을 알려주고, 다시 한 번 더 누르면 배경색과 글자색을 RGB 형식으로 읽어줍니다.</p>
+<p> 예: &#39;바탕 12포인트 언더라인&#39; &#39;배경 R 0 G 0 B 0 글자 R 255 G 255 B 255&#39;</p>
+<p> # RGB란 RED, GREEN, BLUE의 빛의 삼원색 조합을 의미하며, 윈도우즈에서는 각각의 색의 농도를 256 단계로 구별하여 색상을 표현하게 됩니다. RGB 값이 모두 0이면 검정색을 의미하고, RGB 값이 모두 256이면 흰색입니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter4" href="#chapter4_menu">Ⅷ-19-4. 캐럿 좌표 알림 &lt;Ctrl-Insert-C&gt;</a></h3>
+<br/>
+<p> 현재 캐럿이 위치한 좌표를 &#39;화면좌표 x, y 윈도우좌표 x, y&#39; 형식으로 읽어줍니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter5" href="#chapter5_menu">Ⅷ-19-5. 캐럿 위치 글자 코드 알림 &lt;없음&gt;</a></h3>
+<br/>
+<p> 현재 캐럿이 위치한 글자의 코드를 WideCharacter(유니코드) 값으로 읽어줍니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter6" href="#chapter6_menu">Ⅷ-19-6. 캐럿 위치 글자 속성 알림 &lt;Ctrl-Insert-A&gt;</a></h3>
+<br/>
+<p> 현재 캐럿이 위치한 글자의 속성을 알려줍니다.</p>
+<p> 한 번 누르면 폰트명, 폰트 크기, 글자의 속성 상태등을 읽어주고 두 번 누르면 RGB 형태으로 글자의 배경색과 글자색을 알려줍니다.</p>
+
+</div>
+</div>
+
+<footer>
+<ul>
+<li><a accesskey="h" href="../helpindex.html">홈으로...</a></li>
+<li><a accesskey="b" href="../chapter8/chapter8-18.html">이전: Ⅷ장 센스리더의 기능과 기능키 - 숫자 입력 관련 기능</a></li>
+<li><a accesskey="n" href="../chapter8/chapter8-20.html">다음: Ⅷ장 센스리더의 기능과 기능키 - 기타 기능</a></li>
+</ul>
+</footer>
+</body>
+</html>

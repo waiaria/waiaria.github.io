@@ -1,0 +1,1395 @@
+p{
+	min-height: 1em;
+}
+/* accordion */
+.accordion {
+	margin: 0;
+	padding: 0;
+	border: 2px solid hsl(0deg 0% 52%);
+	border-radius: 7px;
+	width: 20em;
+}
+
+.accordion h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.accordion:focus-within {
+	border-color: hsl(216deg 94% 43%);
+}
+
+.accordion:focus-within h3 {
+	background-color: hsl(0deg 0% 97%);
+}
+
+.accordion > * + * {
+	border-top: 1px solid hsl(0deg 0% 52%);
+}
+
+.accordion-trigger {
+	background: none;
+	color: hsl(0deg 0% 13%);
+	display: block;
+	font-size: 1rem;
+	font-weight: normal;
+	margin: 0;
+	padding: 1em 1.5em;
+	position: relative;
+	text-align: left;
+	width: 100%;
+	outline: none;
+}
+
+.accordion-trigger:focus,
+.accordion-trigger:hover {
+	background: hsl(216deg 94% 94%);
+}
+
+.accordion-trigger:focus {
+	outline: 4px solid transparent;
+}
+
+.accordion > *:first-child .accordion-trigger,
+.accordion > *:first-child {
+	border-radius: 5px 5px 0 0;
+}
+
+.accordion > *:last-child .accordion-trigger,
+.accordion > *:last-child {
+	border-radius: 0 0 5px 5px;
+}
+
+button {
+	border-style: none;
+}
+
+.accordion button::-moz-focus-inner {
+	border: 0;
+}
+
+.accordion-title {
+	display: block;
+	pointer-events: none;
+	border: transparent 2px solid;
+	border-radius: 5px;
+	padding: 0.25em;
+	outline: none;
+}
+
+.accordion-trigger:focus .accordion-title {
+	border-color: hsl(216deg 94% 43%);
+}
+
+.accordion-icon {
+	border: solid currentcolor;
+	border-width: 0 2px 2px 0;
+	height: 0.5rem;
+	pointer-events: none;
+	position: absolute;
+	right: 2em;
+	top: 50%;
+	transform: translateY(-60%) rotate(45deg);
+	width: 0.5rem;
+}
+
+.accordion-trigger:focus .accordion-icon,
+.accordion-trigger:hover .accordion-icon {
+	border-color: hsl(216deg 94% 43%);
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+	transform: translateY(-50%) rotate(-135deg);
+}
+
+.accordion-panel {
+	margin: 0;
+	padding: 1em 1.5em;
+}
+
+/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+.accordion-panel[hidden] {
+	display: none;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	border: 1px solid hsl(0deg 0% 42%);
+	border-radius: 0.3em;
+	display: block;
+	font-size: inherit;
+	padding: 0.3em 0.5em;
+}
+
+/* alert */
+[role="alert"] {
+	padding: 10px;
+	border: 2px solid hsl(206deg 74% 54%);
+	border-radius: 4px;
+	background: hsl(206deg 74% 90%);
+}
+
+[role="alert"]:empty {
+	display: none;
+}
+
+
+/* alertdialog */
+.hidden {
+	display: none;
+}
+
+[role="alertdialog"],
+[role="dialog"] {
+	box-sizing: border-box;
+	padding: 15px;
+	border: 1px solid #000;
+	background-color: #fff;
+	min-height: 100vh;
+}
+
+@media screen and (min-width: 640px) {
+	[role="alertdialog"],
+	[role="dialog"] {
+	position: absolute;
+	top: 2rem;
+	left: 50vw; /* move to the middle of the screen (assumes relative parent is the body/viewport) */
+	transform: translateX(
+		-50%
+	); /* move backwards 50% of this element's width */
+
+	min-width: calc(640px - (15px * 2)); /* == breakpoint - left+right margin */
+	min-height: auto;
+	box-shadow: 0 19px 38px rgb(0 0 0 / 12%), 0 15px 12px rgb(0 0 0 / 22%);
+	}
+}
+
+.dialog_label {
+	text-align: center;
+}
+
+.dialog_form {
+	margin: 15px;
+}
+
+.dialog_form .label_text {
+	box-sizing: border-box;
+	padding-right: 0.5em;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+	width: 30%;
+	text-align: right;
+}
+
+.dialog_form .label_info {
+	box-sizing: border-box;
+	padding-right: 0.5em;
+	font-size: 12px;
+	width: 30%;
+	text-align: right;
+	display: inline-block;
+}
+
+.dialog_form_item {
+	margin: 10px 0;
+}
+
+.dialog_form_item .wide_input {
+	box-sizing: border-box;
+	max-width: 70%;
+	width: 27em;
+}
+
+.dialog_form_item .city_input {
+	box-sizing: border-box;
+	max-width: 70%;
+	width: 17em;
+}
+
+.dialog_form_item .state_input {
+	box-sizing: border-box;
+	max-width: 70%;
+	width: 15em;
+}
+
+.dialog_form_item .zip_input {
+	box-sizing: border-box;
+	max-width: 70%;
+	width: 9em;
+}
+
+.dialog_form_actions {
+	text-align: right;
+	padding: 0 20px 20px;
+}
+
+.dialog_close_button {
+	float: right;
+	position: absolute;
+	top: 10px;
+	left: 92%;
+	height: 25px;
+}
+
+.dialog_close_button img {
+	border: 0;
+}
+
+.dialog_desc {
+	padding: 10px 20px;
+}
+
+/* native <dialog> element uses the ::backdrop pseudo-element */
+
+/* dialog::backdrop, */
+.dialog-backdrop {
+	display: none;
+	position: fixed;
+	overflow-y: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+@media screen and (min-width: 640px) {
+	.dialog-backdrop {
+	background: rgb(0 0 0 / 30%);
+	}
+}
+
+.dialog-backdrop.active {
+	display: block;
+}
+
+.no-scroll {
+	overflow-y: auto !important;
+}
+
+/* this is added to the body when a dialog is open */
+.has-dialog {
+	overflow: hidden;
+}
+
+/* styling for alert-dialog example */
+.notes {
+	display: block;
+	font-size: 1rem;
+	line-height: 1.3;
+	min-width: 400px;
+	max-width: 100%;
+	width: 33%;
+}
+
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
+
+#notes_save {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#notes_save svg {
+	display: block;
+	width: 0.75rem;
+}
+
+#notes_save .icon {
+	display: none;
+}
+
+@keyframes rotate {
+	0% {
+	transform: rotate(0deg);
+	}
+
+	100% {
+	transform: rotate(360deg);
+	}
+}
+
+#notes_save.loading .spinner {
+	display: block;
+	animation: rotate 2s linear infinite;
+}
+
+#notes_save.saved .check {
+	display: block;
+}
+
+
+/* Breadcrumb */
+nav.breadcrumb {
+	padding: 0.8em 1em;
+	border: 1px solid hsl(0deg 0% 90%);
+	border-radius: 4px;
+	background: hsl(300deg 14% 97%);
+}
+
+nav.breadcrumb ol {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+nav.breadcrumb li {
+	display: inline;
+}
+
+nav.breadcrumb li + li::before {
+	display: inline-block;
+	margin: 0 0.25em;
+	transform: rotate(15deg);
+	border-right: 0.1em solid currentcolor;
+	height: 0.8em;
+	content: "";
+}
+
+nav.breadcrumb [aria-current="page"] {
+	color: #000;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+
+/* Button */
+[role="button"] {
+	display: inline-block;
+	position: relative;
+	padding: 0.4em 0.7em;
+	border: 1px solid hsl(213deg 71% 49%);
+	border-radius: 5px;
+	box-shadow: 0 1px 2px hsl(216deg 27% 55%);
+	color: #fff;
+	text-shadow: 0 -1px 1px hsl(216deg 27% 25%);
+	background-color: hsl(216deg 82% 51%);
+	background-image: linear-gradient(
+	to bottom,
+		hsl(216deg 82% 53%),
+		hsl(216deg 82% 47%)
+	);
+}
+
+[role="button"]:hover {
+	border-color: hsl(213deg 71% 29%);
+	background-color: hsl(216deg 82% 31%);
+	background-image: linear-gradient(
+	to bottom,
+	hsl(216deg 82% 33%),
+	hsl(216deg 82% 27%)
+	);
+	cursor: default;
+}
+
+[role="button"]:focus {
+	outline: none;
+}
+
+[role="button"]:focus::before {
+	position: absolute;
+	z-index: -1;
+
+	/* button border width - outline width - offset */
+	top: calc(-1px - 3px - 3px);
+	right: calc(-1px - 3px - 3px);
+	bottom: calc(-1px - 3px - 3px);
+	left: calc(-1px - 3px - 3px);
+	border: 3px solid hsl(213deg 71% 49%);
+
+	/* button border radius + outline width + offset */
+	border-radius: calc(5px + 3px + 3px);
+	content: "";
+}
+
+[role="button"]:active {
+	border-color: hsl(213deg 71% 49%);
+	background-color: hsl(216deg 82% 31%);
+	background-image: linear-gradient(
+	to bottom,
+	hsl(216deg 82% 53%),
+	hsl(216deg 82% 47%)
+	);
+	box-shadow: inset 0 3px 5px 1px hsl(216deg 82% 30%);
+}
+
+[role="button"][aria-pressed] {
+	border-color: hsl(261deg 71% 49%);
+	box-shadow: 0 1px 2px hsl(261deg 27% 55%);
+	text-shadow: 0 -1px 1px hsl(261deg 27% 25%);
+	background-color: hsl(261deg 82% 51%);
+	background-image: linear-gradient(
+	to bottom,
+	hsl(261deg 82% 53%),
+	hsl(261deg 82% 47%)
+	);
+}
+
+[role="button"][aria-pressed]:hover {
+	border-color: hsl(261deg 71% 29%);
+	background-color: hsl(261deg 82% 31%);
+	background-image: linear-gradient(
+	to bottom,
+	hsl(261deg 82% 33%),
+	hsl(261deg 82% 27%)
+	);
+}
+
+[role="button"][aria-pressed="true"] {
+	padding-top: 0.5em;
+	padding-bottom: 0.3em;
+	border-color: hsl(261deg 71% 49%);
+	background-color: hsl(261deg 82% 31%);
+	background-image: linear-gradient(
+	to bottom,
+	hsl(261deg 82% 63%),
+	hsl(261deg 82% 57%)
+	);
+	box-shadow: inset 0 3px 5px 1px hsl(261deg 82% 30%);
+}
+
+[role="button"][aria-pressed="true"]:hover {
+	border-color: hsl(261deg 71% 49%);
+	background-color: hsl(261deg 82% 31%);
+	background-image: linear-gradient(
+	to bottom,
+	hsl(261deg 82% 43%),
+	hsl(261deg 82% 37%)
+	);
+	box-shadow: inset 0 3px 5px 1px hsl(261deg 82% 20%);
+}
+
+[role="button"][aria-pressed]:focus::before {
+	border-color: hsl(261deg 71% 49%);
+}
+
+[role="button"] svg {
+	margin: 0.15em auto -0.15em;
+	height: 1em;
+	width: 1em;
+	pointer-events: none;
+}
+
+
+.menu-button-links {
+	margin: 0;
+	font-size: 110%;
+}
+
+.menu-button-links button {
+	margin: 0;
+	padding: 6px;
+	display: inline-block;
+	position: relative;
+	background-color: #034575;
+	border: 1px solid #034575;
+	font-size: 0.9em;
+	color: white;
+	border-radius: 5px;
+}
+
+.menu-button-links [role="menu"] {
+	margin: 0;
+	padding: 7px 4px;
+	list-style: none;
+	display: none;
+	position: absolute;
+	border: 2px solid #034575;
+	border-radius: 5px;
+	background-color: #eee;
+}
+
+.menu-button-links [role="menuitem"],
+.menu-button-links [role="separator"] {
+	margin: 0;
+	padding: 6px;
+	display: block;
+	width: 24em;
+	background-color: #eee;
+	border: none;
+	color: black;
+	border-radius: 5px;
+}
+
+.menu-button-links [role="separator"] {
+	padding-top: 3px;
+	background-image: url("../images/separator.svg");
+	background-position: center;
+	background-repeat: repeat-x;
+}
+
+.menu-button-links button svg.down {
+	padding-left: 0.125em;
+	fill: currentcolor;
+	stroke: currentcolor;
+}
+
+.menu-button-links button[aria-expanded="true"] svg.down {
+	transform: rotate(180deg);
+}
+
+/* focus styling */
+
+.menu-button-links button:hover,
+.menu-button-links button:focus,
+.menu-button-links button[aria-expanded="true"] {
+	padding: 4px;
+	border: 3px solid #034575;
+	background: #eee;
+	color: #222;
+	outline: none;
+	margin: 0;
+}
+
+.menu-button-links [role="menuitem"]:focus {
+	padding: 4px;
+	border: 2px solid #034575;
+	background: #034575;
+	color: #fff;
+	outline: none;
+	margin: 0;
+}
+
+
+.menu-button-actions {
+	margin: 0;
+	padding: 0;
+}
+
+.menu-button-actions button {
+	margin: 0;
+	padding: 6px;
+	display: inline-block;
+	position: relative;
+	background-color: #034575;
+	border: 1px solid #034575;
+	font-size: 0.9em;
+	color: white;
+	border-radius: 5px;
+}
+
+.menu-button-actions [role="menu"] {
+	display: none;
+	position: absolute;
+	margin: 0;
+	padding: 7px 4px;
+	border: 2px solid #034575;
+	border-radius: 5px;
+	background-color: #eee;
+}
+
+.menu-button-actions [role="menuitem"],
+.menu-button-actions [role="separator"] {
+	margin: 0;
+	padding: 6px;
+	display: block;
+	width: 4em;
+	background-color: #eee;
+	color: black;
+	border-radius: 5px;
+}
+
+.menu-button-actions [role="separator"] {
+	padding-top: 3px;
+	background-image: url("../images/separator.svg");
+	background-position: center;
+	background-repeat: repeat-x;
+}
+
+.menu-button-actions button svg.down {
+	padding-left: 0.125em;
+	fill: currentcolor;
+	stroke: currentcolor;
+}
+
+.menu-button-actions button[aria-expanded="true"] svg.down {
+	transform: rotate(180deg);
+}
+
+/* focus styling */
+
+.menu-button-actions button:hover,
+.menu-button-actions button:focus,
+.menu-button-actions button[aria-expanded="true"] {
+	padding: 4px;
+	border: 3px solid #034575;
+	background: #eee;
+	color: #222;
+	outline: none;
+	margin: 0;
+}
+
+.menu-button-actions [role="menuitem"].focus,
+.menu-button-actions [role="menuitem"]:focus {
+	padding: 4px;
+	border: 2px solid #034575;
+	background: #034575;
+	color: #fff;
+	outline: none;
+	margin: 0;
+}
+
+input.action:focus {
+	outline: 2px solid #034575;
+	background: #def;
+}
+
+
+
+/* .carousel */
+
+img.reload {
+	padding: 0.25em;
+	display: block-inline;
+	position: relative;
+	top: 6px;
+	height: 0.9em;
+}
+
+.carousel {
+	background-color: #eee;
+	max-width: 900px;
+}
+
+.carousel .carousel-inner {
+	position: relative;
+}
+
+.carousel .carousel-items {
+	padding: 5px;
+}
+
+.carousel .carousel-items.focus {
+	padding: 2px;
+	border: solid 3px #005a9c;
+}
+
+.carousel .carousel-item {
+	display: none;
+	max-height: 400px;
+	max-width: 900px;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+.carousel .carousel-item.active {
+	display: block;
+}
+
+/* More like bootstrap, less accessible */
+
+.carousel .carousel-item .carousel-image a img {
+	height: 100%;
+	width: 100%;
+}
+
+.carousel .carousel-item .carousel-caption a {
+	cursor: pointer;
+	text-decoration: underline;
+	color: #fff;
+	font-weight: 600;
+}
+
+.carousel .carousel-item .carousel-caption a,
+.carousel .carousel-item .carousel-caption span.contrast {
+	display: inline-block;
+	margin: 0;
+	padding: 6px;
+	background-color: rgb(0 0 0 / 65%);
+	border-radius: 5px;
+	border: 0 solid transparent;
+}
+
+.carousel-moreaccessible .carousel-items .carousel-image a {
+	display: block;
+	margin: 0;
+	padding: 5px;
+	text-decoration: none;
+	border: none;
+}
+
+.carousel-moreaccessible .carousel-item .carousel-caption a {
+	display: inline-block;
+	margin: 0;
+	padding: 6px;
+	color: black;
+	background-color: transparent;
+	border: none;
+	border-radius: 5px;
+}
+
+.carousel-moreaccessible .carousel-item .carousel-caption span.contrast,
+.carousel-moreaccessible .carousel-item .carousel-caption span.contrast:hover {
+	background-color: transparent;
+}
+
+.carousel .carousel-item .carousel-caption a:hover,
+.carousel .carousel-item .carousel-caption span.contrast:hover {
+	background-color: rgb(0 0 0 / 100%);
+}
+
+.carousel .carousel-item .carousel-caption a:focus {
+	padding: 4px;
+	border: 2px solid #fff;
+	background-color: rgb(0 0 0 / 100%);
+	outline: none;
+	border-width: 2px solid #fff;
+	color: #fff;
+}
+
+.carousel .carousel-item .carousel-caption p {
+	font-size: 1em;
+	line-height: 1.5;
+	margin-bottom: 0;
+}
+
+.carousel .carousel-item .carousel-caption {
+	position: absolute;
+	right: 15%;
+	bottom: 0;
+	left: 15%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #fff;
+	text-align: center;
+}
+
+/* Shared CSS for Pause, Previous and Next Buttons */
+
+.carousel .controls {
+	box-sizing: border-box;
+	position: absolute;
+	top: 1em;
+	z-index: 10;
+	display: flex;
+	width: 100%;
+	padding: 0.25em 1.25em 0;
+}
+
+.carousel .controls button {
+	position: absolute;
+	z-index: 10;
+	flex: 0 0 auto;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: transparent;
+	outline: none;
+}
+
+.carousel .controls button.previous {
+	right: 70px;
+}
+
+.carousel .controls button.next {
+	right: 18px;
+}
+
+/* SVG Controls */
+
+.carousel .controls svg .background {
+	stroke: black;
+	fill: black;
+	stroke-width: 1px;
+	opacity: 0.6;
+}
+
+.carousel .controls svg .border {
+	fill: transparent;
+	stroke: transparent;
+	stroke-width: 2px;
+}
+
+.carousel .controls svg .pause {
+	stroke-width: 4;
+	fill: transparent;
+	stroke: transparent;
+}
+
+.carousel .controls svg .play {
+	stroke-width: 1;
+	fill: transparent;
+	stroke: transparent;
+}
+
+.carousel .controls .pause svg .pause {
+	fill: white;
+	stroke: white;
+}
+
+.carousel .controls .play svg .play {
+	fill: white;
+	stroke: white;
+}
+
+.carousel .controls svg polygon {
+	fill: white;
+	stroke: white;
+}
+
+.carousel .controls button:focus svg .background,
+.carousel .controls button:hover svg .background,
+.carousel .controls button:hover svg .border {
+	fill: #005a9c;
+	stroke: #005a9c;
+	opacity: 1;
+}
+
+.carousel .controls button:focus svg .border {
+	stroke: white;
+}
+
+/* More accessible carousel styles, with caption and controls above/below image */
+
+.carousel-moreaccessible {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	border: #eee solid 4px;
+	border-radius: 5px;
+}
+
+/* Shared CSS for Pause and Tab Controls */
+
+.carousel-moreaccessible .controls {
+	position: relative;
+	top: 0;
+	left: 0;
+	padding: 0.25em 0.25em 0;
+}
+
+.carousel.carousel-moreaccessible .controls {
+	position: static;
+	height: 36px;
+}
+
+.carousel.carousel-moreaccessible .controls button.previous {
+	right: 60px;
+}
+
+.carousel.carousel-moreaccessible .controls button.next {
+	right: 6px;
+}
+
+.carousel-moreaccessible .carousel-items,
+.carousel-moreaccessible .carousel-items.focus {
+	padding: 0;
+	border: none;
+}
+
+.carousel-moreaccessible .carousel-items.focus .carousel-image a {
+	padding: 2px;
+	border: 3px solid #005a9c;
+}
+
+/* More accessible caption styling */
+
+.carousel-moreaccessible .carousel-item {
+	padding: 0;
+	margin: 0;
+	max-height: none;
+}
+
+.carousel-moreaccessible .carousel-item .carousel-caption {
+	position: static;
+	padding: 0;
+	margin: 0;
+	height: 60px;
+	color: black;
+}
+
+.carousel-moreaccessible .carousel-item .carousel-caption p {
+	padding: 0;
+	margin: 0;
+}
+
+.carousel-moreaccessible .carousel-item .carousel-caption h3 {
+	font-size: 1.1em;
+	padding: 0;
+	margin: 0;
+}
+
+.carousel-moreaccessible .carousel-item .carousel-caption a:hover {
+	background-color: rgb(0 0 0 / 20%);
+}
+
+.carousel-moreaccessible .carousel-item .carousel-caption a:focus {
+	padding: 4px;
+	border: 2px solid #005a9c;
+	background-color: transparent;
+	color: black;
+	outline: none;
+}
+
+/* checkbox */
+ul.checkboxes {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding-left: 1em;
+}
+
+ul.checkboxes li {
+	list-style: none;
+	margin: 1px;
+	padding: 0;
+}
+
+[role="checkbox"] {
+	display: inline-block;
+	padding: 4px 8px;
+	cursor: pointer;
+}
+
+[role="checkbox"]::before {
+	position: relative;
+	top: 1px;
+	left: -4px;
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='16' style='forced-color-adjust: auto;'%3E%3Crect x='2' y='2' height='13' width='13' rx='2' stroke='currentcolor' stroke-width='1' fill-opacity='0' /%3E%3C/svg%3E");
+}
+
+[role="checkbox"][aria-checked="true"]::before {
+	position: relative;
+	top: 1px;
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='16' style='forced-color-adjust: auto;'%3E%3Crect x='2' y='2' height='13' width='13' rx='2' stroke='currentcolor' stroke-width='1' fill-opacity='0' /%3E%3Cpolyline points='4,8 7,12 12,5' fill='none' stroke='currentcolor' stroke-width='2' /%3E%3C/svg%3E");
+}
+
+[role="checkbox"]:focus,
+[role="checkbox"]:hover {
+	padding: 2px 6px;
+	border: 2px solid #005a9c;
+	border-radius: 5px;
+	background-color: #def;
+}
+
+[role="checkbox"]:hover {
+	cursor: pointer;
+}
+
+
+/* checkbox Mixed */
+.checkbox-mixed ul.checkboxes {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.checkbox-mixed ul.checkboxes li {
+	margin: 0;
+	padding: 0;
+	padding-left: 15px;
+}
+
+.checkbox-mixed label {
+	margin: 1px;
+	padding: 4px;
+}
+
+.checkbox-mixed [role="checkbox"] {
+	display: inline-block;
+	padding: 4px;
+	cursor: pointer;
+}
+
+.checkbox-mixed [role="checkbox"]::before {
+	position: relative;
+	top: 1px;
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='16' style='forced-color-adjust: auto;'%3E%3Crect x='2' y='2' height='13' width='13' rx='2' stroke='currentcolor' stroke-width='1' fill-opacity='0' /%3E%3C/svg%3E");
+}
+
+.checkbox-mixed [role="checkbox"][aria-checked="true"]::before {
+	position: relative;
+	top: 1px;
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='16' style='forced-color-adjust: auto;'%3E%3Crect x='2' y='2' height='13' width='13' rx='2' stroke='currentcolor' stroke-width='1' fill-opacity='0' /%3E%3Cpolyline points='4,8 7,12 12,5' fill='none' stroke='currentcolor' stroke-width='2' /%3E%3C/svg%3E");
+}
+
+.checkbox-mixed [role="checkbox"][aria-checked="mixed"]::before {
+	position: relative;
+	top: 1px;
+	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='16' style='forced-color-adjust: auto;'%3E%3Crect x='2' y='2' height='13' width='13' rx='2' stroke='currentcolor' stroke-width='1' fill-opacity='0' /%3E%3Cline x1='5' y1='5' x2='12' y2='12' stroke='currentcolor' stroke-width='2' /%3E%3C/svg%3E");
+}
+
+.checkbox-mixed input:focus,
+.checkbox-mixed [role="checkbox"] {
+	outline: none;
+}
+
+.checkbox-mixed [role="checkbox"]:focus,
+.checkbox-mixed [role="checkbox"]:hover {
+	padding: 2px;
+	border: 2px solid #005a9c;
+	border-radius: 5px;
+	background-color: #def;
+}
+
+.checkbox-mixed label.focus,
+.checkbox-mixed label:hover {
+	padding: 2px;
+	border: 2px solid #005a9c;
+	background-color: #def;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+/* Combobox Select only */
+.combo *,
+.combo *::before,
+.combo *::after {
+	box-sizing: border-box;
+}
+
+.combo {
+display: block;
+margin-bottom: 1.5em;
+max-width: 400px;
+position: relative;
+}
+
+.combo::after {
+border-bottom: 2px solid rgb(0 0 0 / 75%);
+border-right: 2px solid rgb(0 0 0 / 75%);
+content: "";
+display: block;
+height: 12px;
+pointer-events: none;
+position: absolute;
+right: 16px;
+top: 50%;
+transform: translate(0, -65%) rotate(45deg);
+width: 12px;
+}
+
+.combo-input {
+background-color: #f5f5f5;
+border: 2px solid rgb(0 0 0 / 75%);
+border-radius: 4px;
+display: block;
+font-size: 1em;
+min-height: calc(1.4em + 26px);
+padding: 12px 16px 14px;
+text-align: left;
+width: 100%;
+}
+
+.open .combo-input {
+border-radius: 4px 4px 0 0;
+}
+
+.combo-input:focus {
+border-color: #0067b8;
+box-shadow: 0 0 4px 2px #0067b8;
+outline: 4px solid transparent;
+}
+
+.combo-label {
+display: block;
+font-size: 20px;
+font-weight: 100;
+margin-bottom: 0.25em;
+}
+
+.combo-menu {
+background-color: #f5f5f5;
+border: 1px solid rgb(0 0 0 / 75%);
+border-radius: 0 0 4px 4px;
+display: none;
+max-height: 300px;
+overflow-y: scroll;
+left: 0;
+position: absolute;
+top: 100%;
+width: 100%;
+z-index: 100;
+}
+
+.open .combo-menu {
+display: block;
+}
+
+.combo-option {
+padding: 10px 12px 12px;
+}
+
+.combo-option:hover {
+background-color: rgb(0 0 0 / 10%);
+}
+
+.combo-option.option-current {
+outline: 3px solid #0067b8;
+outline-offset: -3px;
+}
+
+.combo-option[aria-selected="true"] {
+padding-right: 30px;
+position: relative;
+}
+
+.combo-option[aria-selected="true"]::after {
+border-bottom: 2px solid #000;
+border-right: 2px solid #000;
+content: "";
+height: 16px;
+position: absolute;
+right: 15px;
+top: 50%;
+transform: translate(0, -50%) rotate(45deg);
+width: 8px;
+}
+
+/* combobox AutoComplete list */
+.combobox-list {
+	position: relative;
+}
+
+.combobox .group {
+	display: inline-flex;
+	padding: 4px;
+	cursor: pointer;
+}
+
+.combobox input,
+.combobox button {
+	background-color: white;
+	color: black;
+	box-sizing: border-box;
+	height: 24px;
+	padding: 0;
+	margin: 0;
+	vertical-align: bottom;
+	border: 1px solid gray;
+	position: relative;
+	cursor: pointer;
+}
+
+.combobox input {
+	width: 150px;
+	border-right: none;
+	outline: none;
+	font-size: 87.5%;
+	padding: 1px 3px;
+}
+
+.combobox button {
+	width: 19px;
+	border-left: none;
+	outline: none;
+	color: rgb(0 90 156);
+}
+
+.combobox button[aria-expanded="true"] svg {
+	transform: rotate(180deg) translate(0, -3px);
+}
+
+ul[role="listbox"] {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 4px;
+	top: 28px;
+	list-style: none;
+	background-color: white;
+	display: none;
+	box-sizing: border-box;
+	border: 2px currentcolor solid;
+	max-height: 250px;
+	width: 168px;
+	overflow: scroll;
+	overflow-x: hidden;
+	font-size: 87.5%;
+	cursor: pointer;
+}
+
+ul[role="listbox"] li[role="option"] {
+	margin: 0;
+	display: block;
+	padding-left: 3px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+/* focus and hover styling */
+
+.combobox .group.focus,
+.combobox .group:hover {
+	padding: 2px;
+	border: 2px solid currentcolor;
+	border-radius: 4px;
+}
+
+.combobox .group.focus polygon,
+.combobox .group:hover polygon {
+	fill-opacity: 1;
+}
+
+.combobox .group.focus input,
+.combobox .group.focus button,
+.combobox .group input:hover,
+.combobox .group button:hover {
+	background-color: #def;
+}
+
+[role="listbox"].focus [role="option"][aria-selected="true"],
+[role="listbox"] [role="option"]:hover {
+	background-color: #def;
+	padding-top: 0;
+	padding-bottom: 0;
+	border-top: 2px solid currentcolor;
+	border-bottom: 2px solid currentcolor;
+}
+
+
+/* dialog */
+.hidden {
+	display: none;
+  }
+  
+  [role="alertdialog"],
+  [role="dialog"] {
+	box-sizing: border-box;
+	padding: 15px;
+	border: 1px solid #000;
+	background-color: #fff;
+	min-height: 100vh;
+  }
+  
+  @media screen and (min-width: 640px) {
+	[role="alertdialog"],
+	[role="dialog"] {
+	  position: absolute;
+	  top: 2rem;
+	  left: 50vw; /* move to the middle of the screen (assumes relative parent is the body/viewport) */
+	  transform: translateX(
+		-50%
+	  ); /* move backwards 50% of this element's width */
+  
+	  min-width: calc(640px - (15px * 2)); /* == breakpoint - left+right margin */
+	  min-height: auto;
+	  box-shadow: 0 19px 38px rgb(0 0 0 / 12%), 0 15px 12px rgb(0 0 0 / 22%);
+	}
+  }
+  
+  .dialog_label {
+	text-align: center;
+  }
+  
+  .dialog_close_button {
+	float: right;
+	position: absolute;
+	top: 10px;
+	left: 92%;
+	height: 25px;
+  }
+  
+  .dialog_close_button img {
+	border: 0;
+  }
+  
+  .dialog_desc {
+	padding: 10px 20px;
+  }
+  
+  /* native <dialog> element uses the ::backdrop pseudo-element */
+  
+  /* dialog::backdrop, */
+  .dialog-backdrop {
+	display: none;
+	position: fixed;
+	overflow-y: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  }
+  
+  @media screen and (min-width: 640px) {
+	.dialog-backdrop {
+	  background: rgb(0 0 0 / 30%);
+	}
+  }
+  
+  .dialog-backdrop.active {
+	display: block;
+  }
+  
+  .no-scroll {
+	overflow-y: auto !important;
+  }
+  
+  /* this is added to the body when a dialog is open */
+  .has-dialog {
+	overflow: hidden;
+  }
+  
+  /* styling for alert-dialog example */
+  .notes {
+	display: block;
+	font-size: 1rem;
+	line-height: 1.3;
+	min-width: 400px;
+	max-width: 100%;
+	width: 33%;
+  }
+  
+  .visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+  }
+  
+  #notes_save {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+  }
+  
+  #notes_save svg {
+	display: block;
+	width: 0.75rem;
+  }
+  
+  #notes_save .icon {
+	display: none;
+  }
+  
+  @keyframes rotate {
+	0% {
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  
+  #notes_save.loading .spinner {
+	display: block;
+	animation: rotate 2s linear infinite;
+  }
+  
+  #notes_save.saved .check {
+	display: block;
+  }
+  

@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="../common.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ⅷ장 센스리더의 기능과 기능키 - 포인터 읽기 기능</title>
+</head>
+<body>
+
+<div>
+<div class="chplist">
+<br/>
+<h3 class="ht">Ⅷ-1 포인터 읽기 기능</h3>
+<br/>
+<ul>
+<li><a name="chapter1_menu" href="#chapter1">Ⅷ-1-1. 글자 단위 읽기</a></li>
+<li><a name="chapter2_menu" href="#chapter2">Ⅷ-1-2. 단어 단위 읽기</a></li>
+<li><a name="chapter3_menu" href="#chapter3">Ⅷ-1-3. 줄 단위 읽기</a></li>
+<li><a name="chapter4_menu" href="#chapter4">Ⅷ-1-4. 줄 처음/끝 읽기</a></li>
+<li><a name="chapter5_menu" href="#chapter5">Ⅷ-1-5. 이동 줄 단위 읽기</a></li>
+<li><a name="chapter6_menu" href="#chapter6">Ⅷ-1-6. 객체 단위 읽기</a></li>
+<li><a name="chapter7_menu" href="#chapter7">Ⅷ-1-7. 포인터 기준 읽기</a></li>
+</ul>
+</div>
+<br/>
+<div>
+<h3><a name="chapter1" href="#chapter1_menu">Ⅷ-1-1. 글자 단위 읽기</a></h3>
+<br/>
+<p> 이전 글자로 &lt;Numpad4&gt; &lt;Alt-Shift-M&gt;<br/>
+현재 글자 읽기 &lt;Alt-Numpad5&gt; &lt;Alt-Shift-,&gt;<br/>
+다음 글자로 &lt;Numpad6&gt; &lt;Alt-Shift-.&gt;</p>
+<p> 읽기 포인터를 기준으로 글자단위로 해당 글자를 읽어주는 방법입니다.<br/>
+글자 단위 읽기는 [음성 세부설정]의 구두점, 특수문자 읽기 설정과는 관계없이 모두 읽어주게 됩니다. 이는 글자 단위 읽기 자체가 세부적인 정보를 얻기 위한 목적으로 사용하는 빈도가 높기 때문입니다.</p>
+<h4>1. 이전 글자로 &lt;Numpad4&gt; &lt;Alt-Shift-M&gt;</h4>
+<p> 현재 읽기 포인터의 이전 글자로 읽기 포인터를 이동하면서 해당 글자를 읽어줍니다.<br/>
+읽기 포인터의 위치가 줄의 처음이면 비프음을 내고 이전 줄의 마지막 글자로 읽기 포인터를 이동하면서 글자를 읽어줍니다. 더 이상 이전 글자가 없으면 비프음을 출력합니다.</p>
+<h4> 2. 현재 글자 읽기 &lt;Alt-Numpad5&gt; &lt;Alt-Shift-,&gt;</h4>
+<p> 현재 읽기 포인터가 위치한 글자를 읽어주며, 글자가 아닌 경우 비프음을 출력합니다.<br/>
+현재 글자를 자세히 풀어서 읽으려면 &#39;현재 글자 읽기&#39; 기능을 연속해서 실행합니다.</p>
+<h4>3. 다음 글자로 &lt;Numpad6&gt; &lt;Alt-Shift-.&gt;<br/>
+</h4>
+<p> 현재 읽기 포인터의 다음 글자를 읽은 후에 읽기 포인터를 글자 위치로 이동시킵니다.<br/>
+읽기 포인터가 줄의 끝이면 비프음을 내고 다음 줄의 처음 글자를 읽습니다. 더이상 다음 글자가 없으면 비프음을 냅니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter2" href="#chapter2_menu">Ⅷ-1-2. 단어 단위 읽기</a></h3>
+<br/>
+<p> 이전 단어로 &lt;Ctrl-Numpad4&gt; &lt;Insert-Numpad4&gt; &lt;Alt-Shift-J&gt;<br/>
+현재 단어 읽기 &lt;Ctrl-Numpad5&gt; &lt;Insert-Numpad5&gt; &lt;Alt-Shift-K&gt;<br/>
+다음 단어로 &lt;Ctrl-Numpad6&gt; &lt;Insert-Numpad6&gt; &lt;Alt-Shift-L&gt;</p>
+<h4>1. 이전 단어로 &lt;Ctrl-Numpad4&gt; &lt;Insert-Numpad4&gt; &lt;Alt-Shift-J&gt;</h4>
+<p> 현재 읽기 포인터의 이전 단어를 읽은 후에 단어의 첫글자로 읽기 포인터를 이동합니다.<br/>
+읽기 포인터가 줄의 처음이면 비프음을 내고 이전 줄의 마지막 단어를 읽으면서 읽기 포인터가 이동합니다. 더 이상 이전 단어가 없는 경우에는 비프음을 출력합니다.</p>
+<h4>2. 현재 단어 읽기 &lt;Ctrl-Numpad5&gt; &lt;Insert-Numpad5&gt; &lt;Alt-Shift-K&gt;</h4>
+<p> 읽기 포인터가 위치한 현재 단어를 읽습니다.<br/>
+단어를 자세히 읽으려면 &#39;현재 단어 읽기&#39; 기능을 연속해서 누릅니다.</p>
+<h4>3. 다음 단어로 &lt;Ctrl-Numpad5&gt; &lt;Insert-Numpad5&gt; &lt;Alt-Shift-L&gt;</h4>
+<p> 현재 읽기 포인터의 다음 단어를 읽은 후에 단어의 첫 글자로 읽기 포인터를 위치시킵니다.<br/>
+읽기 포인터가 줄의 마지막이면 비프음을 내고 다음 줄의 처음 단어를 읽습니다. 다음 단어가 더이상 없을 경우에는 비프음을 출력합니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter3" href="#chapter3_menu">Ⅷ-1-3. 줄 단위 읽기</a></h3>
+<br/>
+<p> 이전 줄로 &lt;Numpad8&gt; &lt;Alt-Shift-U&gt;<br/>
+현재 줄 읽기 &lt;Numpad5&gt; &lt;Ctrl-Shift-I&gt;<br/>
+다음 줄로 &lt;Numpad2&gt; &lt;Alt-Shift-O&gt;<br/>
+윈도우 첫 줄로 &lt;Ctrl-Numpad8&gt; &lt;Alt-Shift-P&gt; &lt;Insert-Numpad <br/>
+위쪽 화살표&gt;<br/>
+윈도우 끝 줄로 &lt;Ctrl-Numpad2&gt; &lt;Alt-Shift-;&gt; &lt;Insert-Numpad <br/>
+아래쪽 화살표&gt;</p>
+<h4>1. 이전 줄로 &lt;Numpad8&gt; &lt;Alt-Shift-U&gt;<br/>
+</h4>
+<p> 현재 읽기 포인터가 위치한 이전 줄을 읽고 읽기 포인터를 이동합니다. 이전 줄이 없을 경우에는 비프음을 출력합니다. 이전 줄을 읽을 때는 &#39;이동줄 읽기 설정&#39;에서 설정한 방법대로 읽게 됩니다.</p>
+<h4>2. 현재 줄 읽기 &lt;Numpad5&gt; &lt;Ctrl-Shift-I&gt;<br/>
+</h4>
+<p> 현재 읽기 포인터가 위치한 라인을 읽습니다. 현재 줄이 없으면 비프음을 냅니다.</p>
+<h4>3. 다음 줄로 &lt;Numpad2&gt; &lt;Alt-Shift-O&gt;<br/>
+</h4>
+<p> 현재 읽기 포인터가 위치한 다음 줄을 읽고 다음 줄로 읽기 포인터를 이동합니다. 다음줄이 없을 때는 비프음을 출력합니다. 다음 줄을 읽을 때는 &#39;이동줄 읽기 설정&#39;에서 설정한 방법대로 읽게 됩니다.</p>
+<h4>4. 윈도우 첫 줄로 &lt;Ctrl-Numpad8&gt; &lt;Alt-Shift-P&gt; &lt;Insert-Numpad <br/>
+위쪽 화살표&gt;</h4>
+<p> 현재 지정된 윈도우 범위의 처음 줄을 읽고 읽기 포인터를 첫 줄로 이동시킵니다. 내용이 없으면 비프음을 냅니다.</p>
+<h4>5. 윈도우 끝 줄로 &lt;Ctrl-Numpad2&gt; &lt;Alt-Shift-;&gt; &lt;Insert-Numpad2&gt;</h4>
+<p> 현재 지정된 윈도우 범위의 마지막 줄을 읽고 읽기 포인터를 해당 줄로 이동시킵니다. 내용이 없으면 비프음을 출력합니다.</p>
+<h4>참고사항 : 이동줄 읽기 방법의 예</h4>
+<p> &quot;여러분은 지금 센스리더의 도움말을 보고 계십니다.&quot;라는 문자열이 있고, 현재 읽기 포인터가 &#39;센&#39; 글자 위치에 있다고 가정합니다.</p>
+<p> 1. 전체 읽기 : &quot;여러분은 지금 센스리더의 도움말을 보고 계십니다.&quot;라고 라인 전체를 읽습니다.<br/>
+<p> 2. 왼쪽 읽기 : &quot;여러분은 지금&quot;라고 음성출력을 합니다.<br/>
+<p> 3. 오른쪽 읽기 : &quot;센스리더의 도움말을 보고 계십니다.&quot;라고 읽습니다.<br/>
+<p> 4. 단어 읽기 : &quot;센스&quot;라고 읽기 포인터가 위치한 단어만 읽습니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter4" href="#chapter4_menu">Ⅷ-1-4. 줄 처음/끝 읽기</a></h3>
+<br/>
+<p> 줄 처음으로 &lt;Numpad Home&gt; &lt;Alt-Shift-N&gt;<br/>
+줄 끝으로 &lt;Numpad End&gt; &lt;Alt-Shift-/&gt;</p>
+<h4>1. 줄 처음으로 &lt;Numpad Home&gt; &lt;Alt-Shift-N&gt;</h4>
+<p> 현재 읽기 포인터가 위치한 줄의 처음 글자를 읽고 읽기 포인터를 줄 처음으로 <br/>
+이동합니다. 글자가 없을 경우에는 비프음을 냅니다.</p>
+<h4>2. 줄 끝으로 &lt;Numpad End&gt; &lt;Alt-Shift-/&gt; </h4>
+<p> 현재 읽기 포인터가 위치한 줄의 마지막 글자를 읽고 읽기 포인터를 해당 글자로 위치시킵니다. 글자가 없을 경우에는 비프음을 냅니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter5" href="#chapter5_menu">Ⅷ-1-5. 이동 줄 단위 읽기</a></h3>
+<br/>
+<p> 이동 줄 위로 &lt;Numpad9&gt; &lt;Alt-Shift-Y&gt;<br/>
+이동 줄 아래로 &lt;Numpad3&gt; &lt;Alt-Shift-H&gt;</p>
+<h4>1. 이동 줄 위로 &lt;Numpad9&gt; &lt;Alt-Shift-Y&gt;</h4>
+<p> 현재 읽기 포인터가 위치한 줄에서 이동줄 설정값만큼 라인을 위로 이동하여 읽고 읽기 포인터를 <br/>
+위치시킵니다. 만일 현재 윈도우 범위의 이전 줄이 이동줄 설정의 줄 수보다 적게 남아 있으면 윈도우 첫줄을 읽게 <br/>
+됩니다.</p>
+<h4>2. 이동 줄 아래로 &lt;Numpad3&gt; &lt;Alt-Shift-H&gt;</h4>
+<p> 현재 읽기 포인터가 위치한 줄에서 이동줄 설정값만큼 라인을 아래로 이동하여 읽고 읽기 포인터를 <br/>
+위치시킵니다. 만일 현재 윈도우 범위의 아래 줄이 이동줄 설정의 줄 수보다 적게 남아 있으면 윈도우 첫 줄을 읽게 <br/>
+됩니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter6" href="#chapter6_menu">Ⅷ-1-6. 객체 단위 읽기</a></h3>
+<br/>
+<p> 이전 객체로 &lt;CTRL-Insert-Numpad4&gt; &lt;CTRL-Insert-왼쪽 화살표&gt;<br/>
+현재 객체 읽기 &lt;CTRL-Insert-Numpad5&gt;<br/>
+다음 객체로 &lt;CTRL-Insert-Numpad6&gt; &lt;CTRL-Insert-오른쪽 화살표&gt;</p>
+<h4>1. 이전 객체로 &lt;CTRL-Insert-Numpad4&gt; &lt;CTRL-Insert-왼쪽 화살표&gt;<br/>
+</h4>
+<p> 현재 읽기 포인터의 이전 객체를 읽은 후에 그 객체의 중간 위치로 읽기 포인터를 위치시킵니다. 이 기능은 현재 활성 윈도우 내의 객체만을 대상으로 동작합니다.</p>
+<h4>2. 현재 객체 읽기 &lt;CTRL-Insert-Numpad5&gt;<br/>
+</h4>
+<p> 읽기 포인터가 위치한 현재 객체를 읽습니다.</p>
+<h4>3. 다음 객체로 &lt;CTRL-Insert-Numpad6&gt; &lt;CTRL-Insert-오른쪽 화살표&gt;<br/>
+</h4>
+<p> 현재 읽기 포인터의 다음 객체를 읽은 후에 해당 객체의 중간 위치로 읽기 포인터를 위치시킵니다. 이 기능은 현재 활성 윈도우 내의 객체만을 대상으로 동작합니다.</p>
+
+</div>
+<br/>
+<div>
+<h3><a name="chapter7" href="#chapter7_menu">Ⅷ-1-7. 포인터 기준 읽기</a></h3>
+<br/>
+<p> 처음부터 포인터까지 읽기 &lt;Alt-Numpad8&gt;<br/>
+왼쪽 읽기 &lt;Alt-Numpad4&gt;<br/>
+오른쪽 읽기 &lt;Alt-Numpad6&gt;<br/>
+포인터부터 끝까지 읽기 &lt;Alt-Numpad2&gt;</p>
+<h4>1. 처음부터 포인터까지 읽기 &lt;Alt-Numpad8&gt;</h4>
+<p> 현재 지정된 윈도우 범위의 처음부터 읽기 포인터 위치의 이전까지 읽어줍니다.</p>
+<h4>2. 왼쪽 읽기 &lt;Alt-Numpad4&gt;<br/>
+</h4>
+<p> 현재 읽기 포인터가 위치한 줄의 처음부터 읽기 포인터 위치의 이전까지 읽습니다.</p>
+<h4>3. 오른쪽 읽기 &lt;Alt-Numpad6&gt;<br/>
+</h4>
+<p> 현재 읽기 포인터가 위치한 곳부터 줄의 끝까지 읽습니다.</p>
+<h4>4. 포인터부터 끝까지 읽기 &lt;Alt-Numpad2&gt;<br/>
+</h4>
+<p> 읽기 포인터가 위치한 곳부터 현재 지정된 윈도우 범위의 끝까지 읽습니다.</p>
+
+</div>
+</div>
+
+<footer>
+<ul>
+<li><a accesskey="h" href="../helpindex.html">홈으로...</a></li>
+<li><a accesskey="b" href="../chapter8.html">이전: Ⅷ장 센스리더의 기능과 기능키</a></li>
+<li><a accesskey="n" href="../chapter8/chapter8-2.html">다음: Ⅷ장 센스리더의 기능과 기능키 - 포인터 이동 기능</a></li>
+</ul>
+</footer>
+</body>
+</html>
